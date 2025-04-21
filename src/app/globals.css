@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --dark-color : #0b081d;
+  --second-color : #211d37;
+  --yellow-dark-color :  #a06f3a;
+  --main-color :  #ca9e67;
+  --light-color : #ffffff;
+  --grey-background : #f6f6f6;
+  --success-color: #22c55e;
+  --error-color : #ef4444;
+  --warning-color : #f59e0b ;
+  /* Fonts */
+  --font-size-3xl : clamp(2.8rem, 2vw + 0.8rem, 3.2rem);
+  --font-size-xxl : clamp(2rem, 0.86vw + 0.77rem, 2.4rem);
+  --font-size-xl : clamp(1.1rem, 0.71vw + 0.74rem, 1.6rem);
+  --font-size-l : clamp(1rem, 0.57vw + 0.71rem, 1.4rem);
+  --font-size-s : clamp(0.9rem, 0.43vw + 0.69rem, 1.2rem);
+  --font-size-xs : clamp(0.8rem, 0.29vw + 0.66rem, 1rem);
+  --font-size-xxs : clamp(0.7rem, 0.29vw + 0.56rem, 0.9rem);
+  /* Shadow */
+  --shadow-box : 0 4px 4px 0 rgba(0,0,0,0.25);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  /* background: var(--background); */
+  color: var(--second-color);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color:  var(--dark-color);
+  border-radius: 100px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var( --main-color) ;
+  border-radius: 100px;
+}
+h1{
+  font-size: var(--font-size-3xl);
+}
+h2{
+  font-size: var(--font-size-xxl);
+}
+h3{
+  font-size: var(--font-size-l); 
+}
+p{
+  font-size: var(--font-size-s); 
+}
+.weight-regular{
+  font-weight: 400;
+}
+.weight-medium{
+  font-weight: 500;
+}
+.weight-semibold{
+  font-weight: 600;
+}
+.weight-bold{
+  font-weight: 700;
+}
+
+
+.home-page img{
+  width: 100%;
+  height: 800px;
+  object-fit: cover;
+}
+
+button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background : linear-gradient(to left , var(--main-color),var(--yellow-dark-color));
+  color: var(--light-color);
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.5s;
+  font-size: var(--font-size-s);
+}
+ button:hover{
+  display: flex;
+  background: var(--light-color);
+  color: var(--yellow-dark-color);
+  box-shadow: var(--shadow-box);
+
+}
+input::placeholder{
+  font-size: var(--font-size-s);
+}
+
+@media (max-width:1200px) {
+  h1{
+    font-size: var(--font-size-xxl);
+  }
+  .home-page img{
+    height: 500px;
+} 
+
+}
+
+@media (max-width:1100px) {
+  h1{
+    font-size: var(--font-size-xxl);
+  }
+
+}
+@media (max-width:1024px) {
+
+  h2{
+    font-size: var(--font-size-xxl);
+  }
+  h3{
+    font-size: var(--font-size-xl);
+  }
+  h4{
+    font-size: var(--font-size-s);
+  }
+  p{
+    font-size: var(--font-size-s);
+  }
+   
+}
+@media (max-width:768px) {
+
+  h2{
+    font-size: var(--font-size-xl);
+  }
+  h3{
+    font-size: var(--font-size-l);
+  }
+  h4{
+    /* font-size: var(--font-size-s); */
+  }
+  p{
+    /* font-size: var(--font-size-s); */
+  }
+}
+@media (max-width : 640px) {
+  .home-page img{
+      height: 400px;
+  }  
+}
+@media (max-width:500px) {
+  h1{
+    font-size: 1.5rem;
+  }
+  h2{
+    font-size: var(--font-size-xl) !important;
+  }
+  h3{
+    font-size: var(--font-size-l);
+  }
+  h4{
+    font-size: var(--font-size-l);
+  }
+  p{
+    font-size: var(--font-size-xs);
+  }
+  .home-page img{
+    height: 300px;
+  } 
+  button{
+    font-size: var(--font-size-xs);
+  }
+  input::placeholder{
+    font-size: var(--font-size-xs);
+  }
+  
+}
+

@@ -1,0 +1,165 @@
+.container{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.316) ;
+    height: 90px;
+    z-index: 1000;
+}
+.container ul {
+    display: flex;
+    align-items: center;
+}
+.container ul li{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    color: var(--light-color);
+    transition: 0.3s;
+    text-transform: capitalize;
+}
+
+.container ul li:hover{
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+.container ul li::before{
+    content: "";
+    bottom: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: var(--main-color);
+    position: absolute;
+    transition: 0.3s;
+}
+.active{
+    color: var(--main-color) !important ;
+}
+.container ul li:hover::before{
+    width: 100%;
+}
+.container ul li:hover svg path{
+    fill: var(--main-color);
+}
+.contentMenu {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    border-left: 1px solid rgba(128, 128, 128, 0.316);
+    border-right: 1px solid rgba(128, 128, 128, 0.316);
+}
+.contentMenu button{
+    display: flex;
+    background-color: var(--yellow-dark-color);
+    color: var(--light-color);
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.contentMenu button:hover{
+    display: flex;
+    background-color: var(--light-color);
+    color: var(--yellow-dark-color);
+
+}
+
+/* Menu */
+.menu{
+    position: absolute;
+    top :70px;
+    left: 0;
+    background-color: var(--light-color);
+    width: 200px;
+    border-radius: 20px;
+    font-size: var(--font-size-xs);
+    overflow: hidden;
+    height: 0;
+    display: none;
+
+
+
+}
+.option{
+    color: var(--second-color);
+    transition: 0.2s;
+}
+.option:hover{
+    cursor: pointer;
+    color: var(--yellow-dark-color);
+}
+.menu.open{
+    display: flex;
+    animation: open forwards 0.2s linear;
+}
+@keyframes open {
+    from{
+        height: 0;
+    }to{
+        height: 200px;
+    }
+}
+.menu.close{
+    animation: close forwards 0.3s linear;
+}
+@keyframes close {
+    from{
+        height: 200px;
+    }to{
+        display: none;
+        height: 0px;
+    }
+}
+.arrow{
+    position: relative;
+}
+.arrow svg{
+    position: absolute;
+    top : -19.5px;
+    left: 8px;
+    
+}
+.arrow svg path{
+    fill: var(--light-color) !important;
+    
+}
+
+@media (max-width:1200px) {
+   
+
+}
+
+@media (max-width:1024px) {
+    .contentMenu ul{
+        display: none;
+    }
+    .container{
+        height: 90px;
+    }
+    .container img{
+        width: 200px;
+    }
+}
+
+@media (max-width:768px) {
+
+}
+
+@media (max-width : 640px) {
+    .container{
+        height: 70px;
+    }
+    .container img{
+        width: 150px;
+    }
+}
+
+@media (max-width:500px) {
+
+
+}
