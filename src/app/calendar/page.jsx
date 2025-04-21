@@ -4,8 +4,18 @@ import Style from "./page.module.css"
 import { generateYearCalendar } from "../functionality/calendar"
 import Card from "./card";
 
-const Calendar = ()=>{
-    const fullYear = generateYearCalendar("2024")
+
+export async function getStaticProps() {
+    const fullYear = generateYearCalendar("2024");
+    return {
+        props: {
+            fullYear
+        }
+    };
+} 
+
+const Calendar = ({fullYear})=>{
+    // const fullYear = generateYearCalendar("2024")
     return(<div className={`${Style.container}`}>
     
         <Banner/>
