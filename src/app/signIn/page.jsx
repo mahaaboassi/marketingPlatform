@@ -8,7 +8,7 @@ import { redirect } from "next/navigation";
 const SignIn = () => {
 
   const cookieStore = cookies();
-  const token = cookieStore.get('token')?.value
+  const token =  cookieStore.get('token')?.value
   
   if(token){
     redirect("/");

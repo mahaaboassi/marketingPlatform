@@ -100,6 +100,7 @@ button{
   cursor: pointer;
   transition: 0.5s;
   font-size: var(--font-size-s);
+  text-transform: capitalize;
 }
  button:hover{
   display: flex;

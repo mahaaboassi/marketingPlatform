@@ -1,7 +1,8 @@
 import {Poppins} from "next/font/google";
 import "./globals.css";
-import Navbar from "@/component/navbar/page";
-import WrapperProvider from "@/component/wrapperComponent/wrapperProvider";
+import Navbar from "../component/navbar/page";
+import WrapperProvider from "../component/wrapperComponent/wrapperProvider";
+import Overlay from "../component/messages/overlay";
 
 
 // Poppins font
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
         <WrapperProvider>
           <Navbar/>
           {children}
+          <Overlay/>
         </WrapperProvider>
       </body>
     </html>

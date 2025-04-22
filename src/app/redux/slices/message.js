@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
+  isOpen : false,
   msg : "",
-  status : "",
-  component : <> </>
+  status : "", // error || warning || success
 };
 
 const messageSlice = createSlice({
@@ -11,9 +11,9 @@ const messageSlice = createSlice({
   initialState,
   reducers: {
     message : (state, action) => {
+      state.isOpen = action.payload.isOpen,
       state.msg = action.payload.msg;
       state.status = action.payload.status;
-      state.component = action.payload.component;
     },
   },
 });

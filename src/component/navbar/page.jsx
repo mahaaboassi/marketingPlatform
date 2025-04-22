@@ -1,5 +1,5 @@
 "use client"
-import { navbarData } from "@/data/data"
+import { navbarData } from "../../data/data"
 import Style from "./page.module.css"
 import Image from "next/image"
 import Link from "next/link"
@@ -8,7 +8,7 @@ import { useEffect, useRef, useState} from "react"
 import { useRouter, usePathname } from "next/navigation"
 import { useDispatch, useSelector } from "react-redux"
 import Cookies from "js-cookie"
-import { login } from "@/app/redux/slices/user"
+import { login } from "../../app/redux/slices/user"
 
 const Navbar = ()=>{
     const [ isView, setIsView ] = useState(false)
@@ -33,11 +33,9 @@ const Navbar = ()=>{
             console.error("Failed to parse user from localStorage:", e);
           }
         }
-      }, [dispatch, user]);
+      }, [user]);
       useEffect(()=>{
         const handleClickOutside = (e) => {
-            console.log("bla");
-            
         if (targetServicesRef.current && !targetServicesRef.current.contains(e.target)
            && targetUserRef.current && !targetUserRef.current.contains(e.target)) {
             setIsView(false);

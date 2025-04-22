@@ -6,7 +6,7 @@ import Style from "./page.module.css"
 import { useRouter } from "next/navigation"
 import Cookies from "js-cookie"
 import { useDispatch } from "react-redux"
-import { login } from "@/app/redux/slices/user"
+import { login } from "../../app/redux/slices/user"
 
 const MenuNav = ({childern,isView,menuUser = false})=>{
     const [ isOpen, setIsOpen ] = useState(false)

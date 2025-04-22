@@ -1,0 +1,45 @@
+.container{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left : 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.607);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.cardMessage{
+    background-color: var(--light-color);
+    border-radius: 20px;
+    animation: appear 0.3s linear forwards;
+    width: calc(100vw * 0.50 - 50px);
+}
+@keyframes appear {
+    from{
+        transform: scale(0.2) rotate(-180deg);
+    }to{
+        transform: scale(1) rotate(0deg);
+    }
+}
+@media (max-width : 640px) {
+    .cardMessage{
+        background-color: var(--light-color);
+        border-radius: 20px;
+        animation: appear 0.4s linear forwards;
+        width: calc(100vw * 0.75 - 40px);
+    } 
+  }
+  @media (max-width : 400px) {
+    .cardMessage{
+        background-color: var(--light-color);
+        border-radius: 20px;
+        animation: appear 0.4s linear forwards;
+        width: calc(100vw*0.9 - 40px);
+    } 
+    .container svg{
+        width: 135px;
+        height: auto;
+    }
+  }
